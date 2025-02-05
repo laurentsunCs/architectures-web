@@ -1,0 +1,152 @@
+services:
+  gateway:
+    image: "caddy:latest"
+    depends_on:
+      - api
+      - alpha
+      - beta
+      - gamma
+      - delta
+      - epsilon
+      - zeta
+      - eta
+      - theta
+      - iota
+      - kappa
+      - lambda
+      - mu
+      - nu
+      - xi
+      - omicron
+      - pi
+      - rho
+      - sigma
+      - tau
+      - upsilon
+      - phi
+      - chi
+      - psi
+      - omega
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/data:/data
+      - ./caddy/config:/config
+  api:
+    image: "ewenquim/gourmet:latest"
+    container_name: "api"
+    platform: linux/amd64
+    env_file:
+      - .env
+    ports:
+      - "8083:8083"
+    volumes:
+      - ./api:/app/data
+
+  astro:
+    image: "ewenquim/gourmet-astro:latest"
+    container_name: "astro"
+    ports:
+      - "4321:4321"
+
+  alpha:
+    image: "nginx:latest"
+    container_name: "alpha"
+
+  beta:
+    image: "nginx:latest"
+    container_name: "beta"
+
+  gamma:
+    image: "nginx:latest"
+    container_name: "gamma"
+
+  delta:
+    image: "nginx:latest"
+    container_name: "delta"
+
+  epsilon:
+    image: "nginx:latest"
+    container_name: "epsilon"
+
+  zeta:
+    image: "nginx:latest"
+    container_name: "zeta"
+
+  eta:
+    image: "nginx:latest"
+    container_name: "eta"
+
+  theta:
+    image: "nginx:latest"
+    container_name: "theta"
+
+  iota:
+    image: "nginx:latest"
+    container_name: "iota"
+
+  kappa:
+    image: "nginx:latest"
+    container_name: "kappa"
+
+  lambda:
+    image: "nginx:latest"
+    container_name: "lambda"
+
+  mu:
+    image: "nginx:latest"
+    container_name: "mu"
+
+  nu:
+    image: "nginx:latest"
+    container_name: "nu"
+
+  xi:
+    image: "nginx:latest"
+    container_name: "xi"
+
+  omicron:
+    image: "nginx:latest"
+    container_name: "omicron"
+
+  pi:
+    image: "nginx:latest"
+    container_name: "pi"
+
+  rho:
+    image: "nginx:latest"
+    container_name: "rho"
+
+  sigma:
+    image: "nginx:latest"
+    container_name: "sigma"
+
+  tau:
+    image: "nginx:latest"
+    container_name: "tau"
+
+  upsilon:
+    image: "nginx:latest"
+    container_name: "upsilon"
+
+  phi:
+    image: "nginx:latest"
+    container_name: "phi"
+
+  chi:
+    image: "nginx:latest"
+    container_name: "chi"
+
+  psi:
+    image: "nginx:latest"
+    container_name: "psi"
+
+  omega:
+    image: "nginx:latest"
+    container_name: "omega"
+
+  test:
+    image: "nginxdemos/hello:latest"
+    container_name: "test"
