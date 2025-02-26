@@ -1,6 +1,7 @@
 services:
   gateway:
     image: "caddy:latest"
+    container_name: "gateway"
     depends_on:
       - api
       - alpha
@@ -44,6 +45,35 @@ services:
       - "8083:8083"
     volumes:
       - ./api:/app/data
+
+  cadvisor:
+    image: "gcr.io/cadvisor/cadvisor:latest"
+    container_name: "cadvisor"
+    privileged: true
+    devices:
+      - "/dev/kmsg"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+
+  prometheus:
+    image: "prom/prometheus:latest"
+    container_name: "prometheus"
+    user: "1000"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/data:/prometheus
+
+  grafana:
+    image: "grafana/grafana:latest"
+    container_name: "grafana"
+    user: "1000"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana:/var/lib/grafana
 
   astro:
     image: "ewenquim/gourmet-astro:latest"
