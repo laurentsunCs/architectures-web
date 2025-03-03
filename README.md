@@ -60,7 +60,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | beta      |               |               |                |                   |
 | gamma     |               |               |                |                   |
 | delta     |               |               |                |                   |
-| epsilon   |               |               |                |                   |
+| epsilon   |  Liwei SUN    | Dac-An VO     | https://github.com/Dac-An-hub/cass-app               |                   |
 | zeta      |  Laurent Sun             |   Sharmilan             |     https://github.com/laurentsunCs/architectures-web           |             TBD      |
 | eta       |               |               |                |                   |
 | theta     |               |               |                |                   |
