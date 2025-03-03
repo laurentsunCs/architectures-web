@@ -68,10 +68,10 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | kappa     |               |               |                |                   |
 | lambda    |               |               |                |                   |
 | mu        |               |               |                |                   |
-| nu        |               |               |                |                   |
+| nu        |Elias Salvan   |Antoine Pélerin|https://github.com/elsgit43/architectures-web|                   |
 | xi        |               |               |                |                   |
 | omicron   |               |               |                |                   |
-| pi        |Elias Salvan   |Antoine Pelerin|https://github.com/elsgit43/architectures-web|                   |
+| pi        |               |               |                |                   |
 | rho       |               |               |                |                   |
 | sigma     |               |               |                |                   |
 | tau       |               |               |                |                   |
