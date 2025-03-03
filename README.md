@@ -78,5 +78,5 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | upsilon   |Alex Melhem|               |                |                   |
 | phi       |               |               |                |                   |
 | chi       | Alexandre Correia   |  Gustave Legrand     | https://github.com/AlexandreCGithub/archiweb-TD               |                   |
-| psi       |               |               |                |                   |
+| psi       | Lisa Lupi|Thomas Soupizet|[Lien](https://github.com/lisalupi/architectures-web)|                   |
 | omega     | Thomas Melwig |               |                |                   |
