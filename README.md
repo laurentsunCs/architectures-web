@@ -73,7 +73,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | omicron   |               |               |                |                   |
 | pi        |               |               |                |                   |
 | rho       |               |               |                |                   |
-| sigma     |               |               |                |                   |
+| sigma     |Thibault Muller|Pierre-Louis Veyrenc|[tibo-mllr/TP-archi-web](https://github.com/tibo-mllr/TP-archi-web)|TBD                |
 | tau       |               |               |                |                   |
 | upsilon   |               |               |                |                   |
 | phi       |               |               |                |                   |
