@@ -79,4 +79,4 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | phi       |               |               |                |                   |
 | chi       | Alexandre Correia   |  Gustave Legrand     | https://github.com/AlexandreCGithub/archiweb-TD               |                   |
 | psi       | Lisa Lupi|Thomas Soupizet|[github](https://github.com/lisalupi/architectures-web)|                   |
-| omega     | Thomas Melwig |               |                |                   |
+| omega     | Thomas Melwig |Valentin Gérard|https://github.com/tmelwig/architectures-web|                   |
