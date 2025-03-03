@@ -75,7 +75,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | rho       |               |               |                |                   |
 | sigma     |Thibault Muller|Pierre-Louis Veyrenc|[tibo-mllr/TP-archi-web](https://github.com/tibo-mllr/TP-archi-web)|TBD                |
 | tau       |               |               |                |                   |
-| upsilon   |Alex Melhem|               |                |                   |
+| upsilon   |Alex Melhem|               |[J'ai faim](https://github.com/41ks/archiweb-jaifaim)|                   |
 | phi       |               |               |                |                   |
 | chi       | Alexandre Correia   |  Gustave Legrand     | https://github.com/AlexandreCGithub/archiweb-TD               |                   |
 | psi       | Lisa Lupi|Thomas Soupizet|[github](https://github.com/lisalupi/architectures-web)|                   |
