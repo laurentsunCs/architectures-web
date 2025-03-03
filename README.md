@@ -71,7 +71,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | nu        |               |               |                |                   |
 | xi        |               |               |                |                   |
 | omicron   |               |               |                |                   |
-| pi        | Elie Caratgé  |Ayman Ben Souira|                |                   |
+| pi        | Elie Caratgé  | Ayman Ben Souira | git@github.com:dotdelete/gourmet.git |                   |
 | rho       |               |               |                |                   |
 | sigma     |               |               |                |                   |
 | tau       |               |               |                |                   |
