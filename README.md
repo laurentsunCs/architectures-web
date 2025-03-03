@@ -60,23 +60,23 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | beta      |               |               |                |                   |
 | gamma     |               |               |                |                   |
 | delta     |               |               |                |                   |
-| epsilon   |               |               |                |                   |
-| zeta      |               |               |                |                   |
+| epsilon   |  Liwei SUN    | Dac-An VO     | https://github.com/Dac-An-hub/cass-app               |                   |
+| zeta      |  Laurent Sun             |   Sharmilan             |     https://github.com/laurentsunCs/architectures-web           |             TBD      |
 | eta       |               |               |                |                   |
 | theta     |               |               |                |                   |
 | iota      |               |               |                |                   |
 | kappa     |               |               |                |                   |
-| lambda    |               |               |                |                   |
-| mu        |               |               |                |                   |
-| nu        |               |               |                |                   |
+| lambda    |Antoine Castel |Arnaud PY      |[Lien GitHub](https://github.com/antoinecstl/Gourmitton)|[nonouille/lambda-archi-web](https://hub.docker.com/repository/docker/nonouille/lambda-archi-web/general)|
+| mu        |Clara Bou Hanna             |               |                |                   |
+| nu        |Elias Salvan   |Antoine Pélerin|https://github.com/elsgit43/architectures-web|                   |
 | xi        |               |               |                |                   |
 | omicron   |               |               |                |                   |
-| pi        |               |               |                |                   |
+| pi        | Elie Caratgé  | Ayman Ben Souira | git@github.com:dotdelete/gourmet.git |                   |
 | rho       |               |               |                |                   |
-| sigma     |               |               |                |                   |
+| sigma     |Thibault Muller|Pierre-Louis Veyrenc|[tibo-mllr/TP-archi-web](https://github.com/tibo-mllr/TP-archi-web)|TBD                |
 | tau       |               |               |                |                   |
-| upsilon   |               |               |                |                   |
+| upsilon   |Alex Melhem|               |[J'ai faim](https://github.com/41ks/archiweb-jaifaim)|                   |
 | phi       |               |               |                |                   |
-| chi       |               |               |                |                   |
-| psi       |               |               |                |                   |
+| chi       | Alexandre Correia   |  Gustave Legrand     | https://github.com/AlexandreCGithub/archiweb-TD               |                   |
+| psi       | Lisa Lupi|Thomas Soupizet|[github](https://github.com/lisalupi/architectures-web)|                   |
 | omega     | Thomas Melwig |Valentin Gérard|https://github.com/tmelwig/architectures-web|                   |
