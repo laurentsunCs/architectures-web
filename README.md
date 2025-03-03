@@ -71,7 +71,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | nu        |               |               |                |                   |
 | xi        |               |               |                |                   |
 | omicron   |               |               |                |                   |
-| pi        |               |               |                |                   |
+| pi        | Elie Caratgé  |Ayman Ben Souira|                |                   |
 | rho       |               |               |                |                   |
 | sigma     |               |               |                |                   |
 | tau       |               |               |                |                   |
