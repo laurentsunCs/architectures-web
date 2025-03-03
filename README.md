@@ -79,4 +79,4 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | phi       |               |               |                |                   |
 | chi       |               |               |                |                   |
 | psi       |               |               |                |                   |
-| omega     | Thomas Melwig |               |                |                   |
+| omega     | Thomas Melwig |Valentin Gérard|https://github.com/tmelwig/architectures-web|                   |
