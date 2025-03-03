@@ -71,7 +71,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | nu        |               |               |                |                   |
 | xi        |               |               |                |                   |
 | omicron   |               |               |                |                   |
-| pi        |               |               |                |                   |
+| pi        |Elias Salvan   |Antoine Pelerin|https://github.com/elsgit43/architectures-web|                   |
 | rho       |               |               |                |                   |
 | sigma     |               |               |                |                   |
 | tau       |               |               |                |                   |
