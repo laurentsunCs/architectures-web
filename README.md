@@ -66,7 +66,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | theta     |               |               |                |                   |
 | iota      |               |               |                |                   |
 | kappa     |               |               |                |                   |
-| lambda    |               |               |                |                   |
+| lambda    |Antoine Castel |Arnaud PY      |[Lien GitHub](https://github.com/antoinecstl/Gourmitton)|[nonouille/lambda-archi-web](https://hub.docker.com/repository/docker/nonouille/lambda-archi-web/general)|
 | mu        |               |               |                |                   |
 | nu        |               |               |                |                   |
 | xi        |               |               |                |                   |
