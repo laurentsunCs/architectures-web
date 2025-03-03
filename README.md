@@ -79,4 +79,4 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | phi       |               |               |                |                   |
 | chi       |               |               |                |                   |
 | psi       |               |               |                |                   |
-| omega     |               |               |                |                   |
+| omega     | Thomas Melwig |               |                |                   |
