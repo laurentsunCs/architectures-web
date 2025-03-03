@@ -41,11 +41,12 @@ Elle se basera sur une API REST qui permettra de gérer les recettes. Vous devre
 
 ### Évaluation
 
-- Respect des consignes (Fonctionnalités demandées bien implémentées)
-- Qualité du code
-- Belle interface (UX/UI)
-- Performance
-- Sécurité
+- 20% Répondre aux exigences (features demandées, pas de crashs)
+- 10% Bonne UX/UI
+- 10% Code de qualité
+- 20% Performance
+- 20% Sécurité
+- 20% Pratiques professionnelles (tests, CI/CD, documentation, etc...)
 
 Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont bien implémentées. Si vous avez des idées pour améliorer l'application, n'hésitez pas à les implémenter!
 

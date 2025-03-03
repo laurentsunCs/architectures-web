@@ -81,6 +81,12 @@ services:
     ports:
       - "4321:4321"
 
+  nextjs:
+    image: "ewenquim/gourmet-next:latest"
+    container_name: "nextjs"
+    ports:
+      - "3003:3003"
+
   alpha:
     image: "nginx:latest"
     container_name: "alpha"

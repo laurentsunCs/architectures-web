@@ -11,6 +11,11 @@ astro.cours.quimerch.com {
 	reverse_proxy astro:4321
 }
 
+nextjs.cours.quimerch.com {
+	encode gzip zstd
+	reverse_proxy nextjs:3003
+}
+
 # Frontends eleves
 alpha.cours.quimerch.com {
 	encode gzip zstd
