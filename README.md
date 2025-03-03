@@ -68,15 +68,15 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | kappa     |               |               |                |                   |
 | lambda    |Antoine Castel |Arnaud PY      |[Lien GitHub](https://github.com/antoinecstl/Gourmitton)|[nonouille/lambda-archi-web](https://hub.docker.com/repository/docker/nonouille/lambda-archi-web/general)|
 | mu        |               |               |                |                   |
-| nu        |               |               |                |                   |
+| nu        |Elias Salvan   |Antoine Pélerin|https://github.com/elsgit43/architectures-web|                   |
 | xi        |               |               |                |                   |
 | omicron   |               |               |                |                   |
 | pi        | Elie Caratgé  |Ayman Ben Souira|                |                   |
 | rho       |               |               |                |                   |
 | sigma     |Thibault Muller|Pierre-Louis Veyrenc|[tibo-mllr/TP-archi-web](https://github.com/tibo-mllr/TP-archi-web)|TBD                |
 | tau       |               |               |                |                   |
-| upsilon   |               |               |                |                   |
+| upsilon   |Alex Melhem|               |                |                   |
 | phi       |               |               |                |                   |
-| chi       |               |               |                |                   |
+| chi       | Alexandre Correia   |  Gustave Legrand     | https://github.com/AlexandreCGithub/archiweb-TD               |                   |
 | psi       |               |               |                |                   |
 | omega     | Thomas Melwig |               |                |                   |
