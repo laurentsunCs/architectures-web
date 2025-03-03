@@ -61,7 +61,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | gamma     |               |               |                |                   |
 | delta     |               |               |                |                   |
 | epsilon   |               |               |                |                   |
-| zeta      |               |               |                |                   |
+| zeta      |  Laurent Sun             |   Sharmilan             |     https://github.com/laurentsunCs/architectures-web           |             TBD      |
 | eta       |               |               |                |                   |
 | theta     |               |               |                |                   |
 | iota      |               |               |                |                   |
