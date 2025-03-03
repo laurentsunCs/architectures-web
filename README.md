@@ -68,7 +68,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | kappa     |               |               |                |                   |
 | lambda    |Antoine Castel |Arnaud PY      |[Lien GitHub](https://github.com/antoinecstl/Gourmitton)|[nonouille/lambda-archi-web](https://hub.docker.com/repository/docker/nonouille/lambda-archi-web/general)|
 | mu        |               |               |                |                   |
-| nu        |               |               |                |                   |
+| nu        |Elias Salvan   |Antoine Pélerin|https://github.com/elsgit43/architectures-web|                   |
 | xi        |               |               |                |                   |
 | omicron   |               |               |                |                   |
 | pi        | Elie Caratgé  |Ayman Ben Souira|                |                   |
