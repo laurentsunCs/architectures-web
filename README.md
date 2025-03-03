@@ -75,7 +75,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | rho       |               |               |                |                   |
 | sigma     |               |               |                |                   |
 | tau       |               |               |                |                   |
-| upsilon   |               |               |                |                   |
+| upsilon   |Alex Melhem|               |                |                   |
 | phi       |               |               |                |                   |
 | chi       |               |               |                |                   |
 | psi       |               |               |                |                   |
