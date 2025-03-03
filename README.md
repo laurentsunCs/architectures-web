@@ -61,8 +61,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | gamma     |               |               |                |                   |
 | delta     |               |               |                |                   |
 | epsilon   |  Liwei SUN    | Dac-An VO     | https://github.com/Dac-An-hub/cass-app               |                   |
-| zeta      |  Laurent Sun             |   Sharmilan             |     https://github.com/laurentsunCs/architectures-web           |     llsun/recipe-app:latest
-      |
+| zeta      |  Laurent Sun|   Sharmilan|     https://github.com/laurentsunCs/architectures-web llsun/recipe-app:latest|
 | eta       |               |               |                |                   |
 | theta     |               |               |                |                   |
 | iota      |               |               |                |                   |
