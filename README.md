@@ -23,7 +23,7 @@ Elle se basera sur une API REST qui permettra de gérer les recettes. Vous devre
 - Se déconnecter de son compte utilisateur
 - Ajouter une recette à ses favoris
 - Supprimer une recette de ses favoris
-- PAGE `/fav` Voir la liste de ses recettes favorites
+- PAGE `/favorites` Voir la liste de ses recettes favorites
 
 ### Contraintes
 
