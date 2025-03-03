@@ -77,6 +77,6 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | tau       |               |               |                |                   |
 | upsilon   |Alex Melhem|               |                |                   |
 | phi       |               |               |                |                   |
-| chi       |               |               |                |                   |
+| chi       | Alexandre Correia   |  Gustave Legrand     | https://github.com/AlexandreCGithub/archiweb-TD               |                   |
 | psi       |               |               |                |                   |
 | omega     | Thomas Melwig |               |                |                   |
