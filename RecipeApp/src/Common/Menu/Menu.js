@@ -23,7 +23,7 @@ function Menu(){
             <a href="/">Accueil</a>
             <a href="/recipe">Recipes</a>
             <a href="/favorite">Favoris</a>
-            <a href="">Contact</a>
+            <a href="/login">Login</a>
         </div>
     </nav>
         </div>
