@@ -62,7 +62,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | delta     |               |               |                |                   |
 | epsilon   |  Liwei SUN    | Dac-An VO     | https://github.com/Dac-An-hub/cass-app               |                   |
 | zeta      |  Laurent Sun             |   Sharmilan             |     https://github.com/laurentsunCs/architectures-web           |    llsun/recipe-app|
-| eta       |               |               |                |                   |
+| eta       |  Ayoub SGUIAR LHAMDANI |               |     https://github.com/ayoub-sguiar/architectures-web           |                   |
 | theta     |               |               |                |                   |
 | iota      |               |               |                |                   |
 | kappa     |               |               |                |                   |
