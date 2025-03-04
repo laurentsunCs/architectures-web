@@ -22,7 +22,7 @@ function Menu(){
         <div className="menu-links" id="menu-links">
             <a href="/">Accueil</a>
             <a href="/recipe">Recipes</a>
-            <a href="">À propos</a>
+            <a href="/favorite">Favoris</a>
             <a href="">Contact</a>
         </div>
     </nav>
