@@ -21,15 +21,19 @@ export default function RecetteDetail() {
 
     const fetchData = async () => {
       try {
+        // Vérifier d'abord dans les recettes du contexte
         const existing = recettes.find((r) => r.id.toString() === id);
 
         if (existing) {
           setRecipe(existing);
         } else {
-          const { data } = await axios.get(`${API_URL}/recipes/${id}`, {
-            timeout: 5000,
-          });
-          setRecipe(data);
+          // Si non trouvée, fetch depuis l'API et merger avec l'état du contexte
+          const { data } = await axios.get(`${API_URL}/recipes/${id}`);
+          const withFavoriteStatus = {
+            ...data,
+            isFavorite: recettes.some((r) => r.id === data.id && r.isFavorite),
+          };
+          setRecipe(withFavoriteStatus);
         }
       } catch (err) {
         console.error("Erreur:", err);
@@ -40,7 +44,7 @@ export default function RecetteDetail() {
     };
 
     fetchData();
-  }, [id]);
+  }, [id, recettes]);
 
   if (loading) return <div className="loading">Chargement en cours...</div>;
   if (error) return <div className="error">Recette introuvable</div>;
@@ -52,24 +56,32 @@ export default function RecetteDetail() {
         {/* Colonne gauche - Image */}
         <div className="recipe-image-column">
           {recipe.image_url && (
-            <img
-              src={recipe.image_url}
-              alt={recipe.name}
-              className="recipe-image"
-            />
+            <>
+              <img
+                src={recipe.image_url || DEFAULT_IMAGE}
+                alt={recipe.name}
+                className="recipe-image"
+              />
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleFavorite(recipe.id);
+                }}
+                className="detail-favorite-button"
+                aria-label={
+                  recipe.isFavorite
+                    ? "Retirer des favoris"
+                    : "Ajouter aux favoris"
+                }
+              >
+                {recipe.isFavorite ? "❤️" : "🤍"}
+              </button>
+            </>
           )}
         </div>
-
-        {/* Colonne droite - Contenu */}
         <div className="recipe-content-column">
           <div className="recipe-header">
             <h1>{recipe.name}</h1>
-            <button
-              onClick={() => toggleFavorite(recipe.id)}
-              className="favorite-button"
-            >
-              {recipe.isFavorite ? "❤️ Retirer" : "🤍 Ajouter"}
-            </button>
           </div>
 
           {/* Grille des stats */}

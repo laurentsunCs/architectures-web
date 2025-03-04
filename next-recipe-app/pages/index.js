@@ -50,7 +50,10 @@ export default function Home() {
                 <p className="recipe-description">{recette.description}</p>
                 <div className="recipe-meta">
                   <div className="meta-item">
-                    <span>⏱ {recette.prep_time} min</span>
+                    <span>prep ⏱ {recette.prep_time} min</span>
+                  </div>
+                  <div className="meta-item">
+                    <span>cook ⏱ {recette.cook_time} min</span>
                   </div>
                   <div className="meta-item">
                     <span>🔥 {recette.calories} kcal</span>
@@ -72,11 +75,16 @@ export async function getServerSideProps() {
       timeout: 5000,
     });
 
-    const isValidData =
-      Array.isArray(data) && data.every((item) => item?.id && item?.name);
+    const cleanedData = Array.isArray(data)
+      ? data.map((recipe) => ({
+          ...recipe,
+          image_url: recipe.image_url || "/images/no-image.jpg", // Corrige ici
+        }))
+      : [];
 
+    const isValidData = cleanedData.every((item) => item?.id && item?.name);
     return {
-      props: { recipes: isValidData ? data : [] },
+      props: { recipes: isValidData ? cleanedData : [] },
     };
   } catch (error) {
     console.error("Erreur de récupération des recettes:", error);
