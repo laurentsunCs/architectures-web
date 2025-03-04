@@ -13,7 +13,8 @@ function HomePage() {
 
     // Charger les recettes
     useEffect(() => {
-        fetch("/recipes", {
+        console.log("Chargement des recettes...");
+        fetch("https://gourmet.cours.quimerch.com/recipes", {
             method: "GET",
             headers: {
                 "Accept": "application/json",
