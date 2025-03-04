@@ -1,19 +1,19 @@
 import React from "react";
 import "./App.css";
-import Menu from './Menu/Menu';
-import Loader from './Loader/Loader';
-import HomePage from "./HomePage/HomePage";
+import { RouterProvider } from "react-router-dom";
+import router from "./Router/Router";
+import { LoadingProvider } from "./Common/Loader/LoadingContext";
 
 function App() {
-  return (
-    
-    <div className="App">
+  
 
-      <Loader />
-      <Menu />
-      
-      <HomePage />
-    </div>
+  return (
+    <LoadingProvider>
+      <div className="App">
+      <RouterProvider router={router}>
+      </RouterProvider>
+      </div>
+    </LoadingProvider>
   );
 }
 
