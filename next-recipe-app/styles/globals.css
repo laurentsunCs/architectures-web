@@ -46,6 +46,21 @@
     background-color: #f8f9fa;
     object-fit: cover;
   }
+
+  .recipe-stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .recipe-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+  }
   
   .recipe-card:hover .recipe-image {
     transform: scale(1.05);
@@ -76,7 +91,8 @@
   
   .recipe-meta {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 1px solid #eee;
@@ -85,8 +101,15 @@
   .meta-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    color: #636e72;
+    gap: 0.3rem;
+    background: #f8f9fa;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+  }
+  
+  .meta-item span {
+    white-space: nowrap;
   }
   
   .meta-icon {

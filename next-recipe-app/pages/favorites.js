@@ -1,9 +1,30 @@
 // pages/favorites.js
 import { useRecettes } from "../context/RecettesContext";
+import { useAuth } from "../context/AuthContext";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import Link from "next/link";
 
 export default function Favorites() {
+  const router = useRouter();
+  const { isAuthenticated, loading } = useAuth();
   const { recettes, toggleFavorite } = useRecettes();
+
+  // Redirection si non authentifié
+  useEffect(() => {
+    if (!loading && !isAuthenticated) {
+      router.push(
+        `/login?message=${encodeURIComponent(
+          "Connectez-vous pour accéder aux favoris"
+        )}&redirect=${router.asPath}`
+      );
+    }
+  }, [isAuthenticated, loading, router]);
+
+  // Gestion du loading
+  if (loading || !isAuthenticated) {
+    return <div className="loading">Chargement...</div>;
+  }
   const favorites = recettes.filter((recipe) => recipe?.isFavorite);
 
   return (

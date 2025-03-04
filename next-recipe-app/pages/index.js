@@ -1,5 +1,5 @@
 // pages/index.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import PropTypes from "prop-types";
@@ -8,7 +8,21 @@ import { useRecettes } from "../context/RecettesContext";
 const API_URL = "https://gourmet.cours.quimerch.com";
 
 export default function Home() {
-  const { recettes, toggleFavorite } = useRecettes();
+  const { recettes, toggleFavorite, getFavoriteCount } = useRecettes();
+  const [starsCounts, setStarsCounts] = useState({});
+
+  // Récupération des compteurs d'étoiles
+  useEffect(() => {
+    const fetchStars = async () => {
+      const counts = {};
+      for (const recipe of recettes) {
+        counts[recipe.id] = await getFavoriteCount(recipe.id);
+      }
+      setStarsCounts(counts);
+    };
+
+    if (recettes.length > 0) fetchStars();
+  }, [recettes]);
 
   return (
     <main className="container">
@@ -50,10 +64,13 @@ export default function Home() {
                 <p className="recipe-description">{recette.description}</p>
                 <div className="recipe-meta">
                   <div className="meta-item">
-                    <span>prep ⏱ {recette.prep_time} min</span>
+                    <span>⭐ {starsCounts[recette.id] || 0}</span>
                   </div>
                   <div className="meta-item">
-                    <span>cook ⏱ {recette.cook_time} min</span>
+                    <span>⏱ Prep {recette.prep_time} min</span>
+                  </div>
+                  <div className="meta-item">
+                    <span>⏱ Cook {recette.cook_time} min</span>
                   </div>
                   <div className="meta-item">
                     <span>🔥 {recette.calories} kcal</span>
