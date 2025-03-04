@@ -1,11 +1,18 @@
 import React from "react";
 import "./App.css";
+import Menu from './Menu/Menu';
+import Loader from './Loader/Loader';
+import HomePage from "./HomePage/HomePage";
 
 function App() {
   return (
+    
     <div className="App">
-      <h1>Bienvenue dans mon application React !</h1>
-      <p>C'est une application simple avec React.</p>
+
+      <Loader />
+      <Menu />
+      
+      <HomePage />
     </div>
   );
 }
