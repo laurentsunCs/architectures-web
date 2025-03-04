@@ -13,31 +13,36 @@ function HomePage() {
 
     // Charger les recettes
     useEffect(() => {
-        console.log("Chargement des recettes...");
-        fetch("https://gourmet.cours.quimerch.com/recipes", {
-            method: "GET",
-            headers: {
-                "Accept": "application/json",
-            },
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erreur lors de la récupération des recettes");
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (Array.isArray(data)) {
-                setRecipes(data);
-            } else {
-                throw new Error("Format de données inattendu");
-            }
-            setLoading(false);
-        })
-        .catch(error => {
-            setError(error.message);
-            setLoading(false);
-        });
+        const fetchRecipes = async () => {
+            console.log("Chargement des recettes...");
+            await fetch("https://gourmet.cours.quimerch.com/recipes", {
+                method: "GET",
+                headers: {
+                    "Accept": "application/json",
+                },
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erreur lors de la récupération des recettes");
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Received response json", data);
+                if (Array.isArray(data)) {
+                    setRecipes(data);
+                } else {
+                    throw new Error("Format de données inattendu");
+                }
+                setLoading(false);
+            })
+            .catch(error => {
+                setError(error.message);
+                setLoading(false);
+            });
+        };
+
+        fetchRecipes();
     }, []);
 
     // Slide automatique
@@ -90,6 +95,7 @@ function HomePage() {
                             }, 3000);
                         }}
                     >
+                        <a href={`/recipe/${recipes[carouselIndex]?.id}`}>
                         {/* Vérification avant d'afficher l'image */}
                         <img 
                             src={recipes[carouselIndex]?.image_url || "https://via.placeholder.com/150"} 
@@ -99,6 +105,7 @@ function HomePage() {
                         <div className="recipe-content">
                             <h3>{recipes[carouselIndex]?.name || "Recette"}</h3>
                         </div>
+                        </a>
                     </div>
                 </div>
             )}
@@ -109,14 +116,16 @@ function HomePage() {
                         recipes.map(recipe => (
                             <div key={recipe.id} className="recipe-card">
                                 {/* Vérification avant d'afficher l'image */}
-                                <img 
-                                    src={recipe?.image_url || "https://via.placeholder.com/150"} 
-                                    alt={recipe?.name || "Recette"} 
-                                    className="recipe-image" 
-                                />
-                                <div className="recipe-content">
-                                    <h3>{recipe?.name || "Recette"}</h3>
-                                </div>
+                                <a href={`/recipe/${recipe.id}`}>
+                                    <img 
+                                        src={recipe?.image_url || "https://via.placeholder.com/150"} 
+                                        alt={recipe?.name || "Recette"} 
+                                        className="recipe-image" 
+                                    />
+                                    <div className="recipe-content">
+                                        <h3>{recipe?.name || "Recette"}</h3>
+                                    </div>
+                                </a>
                             </div>
                         ))
                     ) : (
@@ -136,6 +145,7 @@ function HomePage() {
                                             (index === slideIndex - 1 ? 'previous' : ''))}`}
                             >
                                 {/* Vérification avant d'afficher l'image */}
+                                <a href={`/recipe/${recipe.id}`}>
                                 <img 
                                     src={recipe?.image_url || "https://via.placeholder.com/150"} 
                                     alt={recipe?.name || "Recette"} 
@@ -144,6 +154,7 @@ function HomePage() {
                                 <div className="recipe-content">
                                     <h3>{recipe?.name || "Recette"}</h3>
                                 </div>
+                                </a>
                             </div>
                         ))}
                     </div>

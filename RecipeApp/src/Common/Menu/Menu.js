@@ -13,15 +13,15 @@ function Menu(){
     return (
         <div className='Menu'>
     <nav className="menu">
-        <div className="logo"><a href="">Logo</a></div>
+        <div className="logo"><a href="/">Logo</a></div>
         <div className="menu-toggle" onClick={toggleMenu}>
             <div></div>
             <div></div>
             <div></div>
         </div>
         <div className="menu-links" id="menu-links">
-            <a href="">Accueil</a>
-            <a href="">Services</a>
+            <a href="/">Accueil</a>
+            <a href="/recipe">Recipes</a>
             <a href="">À propos</a>
             <a href="">Contact</a>
         </div>

@@ -1,0 +1,103 @@
+/* Conteneur principal */
+.Recipe {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Image principale */
+.recipe-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Contenu de la recette */
+.recipe-content {
+    text-align: center;
+    padding: 10px;
+}
+
+.recipe-content h2 {
+    font-size: 2rem;
+    color: #d32f2f;
+}
+
+.recipe-content p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Détails sous forme de tableau */
+.recipe-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.detail-row {
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.detail-row span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Liste des ingrédients */
+.recipe-ingredients {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.recipe-ingredients h3 {
+    font-size: 1.5rem;
+    color: #388e3c;
+    margin-bottom: 10px;
+}
+
+.recipe-ingredients ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredient-item {
+    background: #e8f5e9;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* Instructions */
+.recipe-instructions {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.recipe-instructions h3 {
+    font-size: 1.5rem;
+    color: #1976d2;
+    margin-bottom: 10px;
+}
+
+.instruction-step {
+    background: #e3f2fd;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}

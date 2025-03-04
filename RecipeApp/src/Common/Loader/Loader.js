@@ -7,7 +7,7 @@ function Loader() {
   useEffect(function() {
     setTimeout(function() {
       setLoading(false);
-    }, 1500); // Temps d'affichage du loader
+    }, 1000); // Temps d'affichage du loader
   }, []);
 
   if (loading) {
