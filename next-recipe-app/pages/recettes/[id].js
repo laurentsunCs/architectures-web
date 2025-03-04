@@ -47,58 +47,64 @@ export default function RecetteDetail() {
   if (!recipe) return <div>Aucune donnée disponible</div>;
 
   return (
-    <article className="recipe-detail">
-      {recipe.image_url && (
-        <img
-          src={recipe.image_url}
-          alt={recipe.name}
-          className="recipe-header-image"
-        />
-      )}
+    <div className="recipe-detail">
+      <div className="recipe-layout">
+        {/* Colonne gauche - Image */}
+        <div className="recipe-image-column">
+          {recipe.image_url && (
+            <img
+              src={recipe.image_url}
+              alt={recipe.name}
+              className="recipe-image"
+            />
+          )}
+        </div>
 
-      <div className="recipe-header">
-        <h1>{recipe.name}</h1>
-        <button onClick={() => toggleFavorite(recipe.id)}>
-          {recipe.isFavorite
-            ? "❤️ Retirer des favoris"
-            : "🤍 Ajouter aux favoris"}
-        </button>
+        {/* Colonne droite - Contenu */}
+        <div className="recipe-content-column">
+          <div className="recipe-header">
+            <h1>{recipe.name}</h1>
+            <button
+              onClick={() => toggleFavorite(recipe.id)}
+              className="favorite-button"
+            >
+              {recipe.isFavorite ? "❤️ Retirer" : "🤍 Ajouter"}
+            </button>
+          </div>
+
+          {/* Grille des stats */}
+          <div className="recipe-stats-grid">
+            <div className="stat-item">
+              <h3>Temps total</h3>
+              <p>{recipe.prep_time + recipe.cook_time} min</p>
+            </div>
+            <div className="stat-item">
+              <h3>Coût</h3>
+              <p>{recipe.cost} €</p>
+            </div>
+            <div className="stat-item">
+              <h3>Portions</h3>
+              <p>{recipe.servings}</p>
+            </div>
+            <div className="stat-item">
+              <h3>Calories</h3>
+              <p>{recipe.calories} kcal</p>
+            </div>
+          </div>
+
+          {/* Description */}
+          <section className="recipe-section">
+            <h2>Description</h2>
+            <p>{recipe.description}</p>
+          </section>
+
+          {/* Instructions */}
+          <section className="recipe-section">
+            <h2>Instructions</h2>
+            <div className="instructions-content">{recipe.instructions}</div>
+          </section>
+        </div>
       </div>
-
-      <div className="recipe-stats">
-        <div className="stat-item">
-          <h3>Temps total</h3>
-          <p>{recipe.prep_time + recipe.cook_time} minutes</p>
-        </div>
-        <div className="stat-item">
-          <h3>Coût estimé</h3>
-          <p>{recipe.cost} €</p>
-        </div>
-        <div className="stat-item">
-          <h3>Portions</h3>
-          <p>{recipe.servings} personnes</p>
-        </div>
-      </div>
-
-      <section className="recipe-section">
-        <h2>Description</h2>
-        <p>{recipe.description}</p>
-      </section>
-
-      <section className="recipe-section">
-        <h2>Instructions</h2>
-        <div className="instructions-content">
-          {recipe.instructions.split("\n").map((line, i) => (
-            <p key={i}>{line}</p>
-          ))}
-        </div>
-      </section>
-
-      {recipe.disclaimer && (
-        <div className="disclaimer">
-          <p>⚠️ {recipe.disclaimer}</p>
-        </div>
-      )}
-    </article>
+    </div>
   );
 }
