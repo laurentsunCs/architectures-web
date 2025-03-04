@@ -4,6 +4,7 @@ import Recipe from "../pages/Recipes/Recipe";
 import RootLayout from "./RootLayout";
 import ErrorPage from "../Common/Error/Error";
 import { useState } from "react-dom";
+import Favorite from "../pages/Favourites/Favorite";
 
 
 let id_ = "" 
@@ -18,6 +19,8 @@ const router = createBrowserRouter([
       { path: "recipe/:id", element: <Recipe id=":id"/>, errorElement: <ErrorPage /> , 
 
              },
+
+        {path: "favorite/", element: <Favorite/>},
              // Route "/about"
       //{ path: "contact", element: <ContactPage /> }, // Route "/contact"
     ],
