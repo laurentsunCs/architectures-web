@@ -57,6 +57,9 @@ services:
       - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
+    command:
+      - "--docker_only"
+      - "--housekeeping_interval=5s"
 
   prometheus:
     image: "prom/prometheus:latest"
@@ -128,7 +131,7 @@ services:
     container_name: "kappa"
 
   lambda:
-    image: "nginx:latest"
+    image: "nonouille/lambda-archi-web:v2"
     container_name: "lambda"
 
   mu:
