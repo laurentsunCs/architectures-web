@@ -59,7 +59,7 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
     command:
       - "--docker_only"
-      - "--housekeeping_interval=5s"
+      - "--housekeeping_interval=10s"
 
   prometheus:
     image: "prom/prometheus:latest"
@@ -135,7 +135,7 @@ services:
     container_name: "lambda"
 
   mu:
-    image: "nginx:latest"
+    image: "clarabh/gourmet:latest"
     container_name: "mu"
 
   nu:
@@ -175,7 +175,7 @@ services:
     container_name: "phi"
 
   chi:
-    image: "nginx:latest"
+    image: "magnoir/archiweb-td:latest"
     container_name: "chi"
 
   psi:
@@ -185,7 +185,3 @@ services:
   omega:
     image: "nginx:latest"
     container_name: "omega"
-
-  test:
-    image: "nginxdemos/hello:latest"
-    container_name: "test"
