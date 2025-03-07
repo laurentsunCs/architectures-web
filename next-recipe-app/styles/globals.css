@@ -376,6 +376,11 @@
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
+.favorite-heart[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* styles/globals.css */
 .detail-favorite-button {
     position: absolute;

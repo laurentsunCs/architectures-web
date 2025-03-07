@@ -9,7 +9,6 @@ const API_URL = "https://gourmet.cours.quimerch.com";
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
@@ -19,37 +18,39 @@ export function AuthProvider({ children }) {
   const checkAuthStatus = async () => {
     try {
       const token = localStorage.getItem("authToken");
-      if (token) {
-        // Optionnel: Vérifier la validité du token
-        setUser({ token }); // Vous pouvez ajouter plus d'infos utilisateur si l'API le permet
+      const username = localStorage.getItem("username");
+      if (token && username) {
+        setUser({ token, username });
       }
     } catch (error) {
       console.error("Erreur de vérification auth:", error);
     } finally {
-      setLoading(false);
+      if (!user) {
+        router.push("/login");
+      }
     }
   };
 
   const login = async (username, password) => {
-    if (username === "test" && password === "test") {
-      localStorage.setItem("authToken", "fake-token");
-      setUser({ token: "fake-token" });
-      return { success: true };
-    }
     try {
       const response = await axios.post(
         `${API_URL}/login`,
+        { username, password },
         {
-          username,
-          password,
-        },
-        {
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json, application/xml",
+          },
         }
       );
 
       localStorage.setItem("authToken", response.data.token);
-      setUser({ token: response.data.token });
+      localStorage.setItem("username", username);
+      setUser({
+        token: response.data.token,
+        username,
+      });
+
       return { success: true };
     } catch (error) {
       console.error("Erreur de connexion:", error);
@@ -62,15 +63,19 @@ export function AuthProvider({ children }) {
 
   const logout = async () => {
     try {
-      await axios.get(`${API_URL}/logout`, {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+      if (user?.token) {
+        await axios.get(`${API_URL}/logout`, {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+            Accept: "application/json",
+          },
+        });
+      }
     } catch (error) {
       console.error("Erreur de déconnexion:", error);
     } finally {
       localStorage.removeItem("authToken");
+      localStorage.removeItem("username");
       setUser(null);
       router.push("/login");
     }
@@ -80,7 +85,6 @@ export function AuthProvider({ children }) {
     <AuthContext.Provider
       value={{
         user,
-        loading,
         isAuthenticated: !!user?.token,
         login,
         logout,

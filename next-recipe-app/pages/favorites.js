@@ -3,23 +3,45 @@ import { useRecettes } from "../context/RecettesContext";
 import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import axios from "axios"; // Ajout de l'importation axios
 import Link from "next/link";
+
+const API_URL = "https://gourmet.cours.quimerch.com"; // Ajout de l'API_URL
 
 export default function Favorites() {
   const router = useRouter();
-  const { isAuthenticated, loading } = useAuth();
-  const { recettes, toggleFavorite } = useRecettes();
+  const { isAuthenticated, loading, user } = useAuth(); // Ajout de user
+  const { recettes, setRecettes, toggleFavorite } = useRecettes(); // Ajout de setRecettes
 
   // Redirection si non authentifié
   useEffect(() => {
-    if (!loading && !isAuthenticated) {
-      router.push(
-        `/login?message=${encodeURIComponent(
-          "Connectez-vous pour accéder aux favoris"
-        )}&redirect=${router.asPath}`
-      );
+    const fetchFavorites = async () => {
+      if (!loading && !isAuthenticated) {
+      }
+      try {
+        const { data } = await axios.get(`${API_URL}/favorites`, {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+            Accept: "application/json, application/xml",
+          },
+        });
+
+        // Mise à jour des recettes avec l'état favori
+        setRecettes((prev) =>
+          prev.map((recipe) => ({
+            ...recipe,
+            isFavorite: data.some((fav) => fav.recipe_id === recipe.id),
+          }))
+        );
+      } catch (error) {
+        console.error("Erreur de chargement des favoris:", error);
+      }
+    };
+
+    if (isAuthenticated && user) {
+      fetchFavorites();
     }
-  }, [isAuthenticated, loading, router]);
+  }, [isAuthenticated, user, setRecettes]); // Ajout de setRecettes dans les dépendances
 
   // Gestion du loading
   if (loading || !isAuthenticated) {

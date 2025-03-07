@@ -8,21 +8,7 @@ import { useRecettes } from "../context/RecettesContext";
 const API_URL = "https://gourmet.cours.quimerch.com";
 
 export default function Home() {
-  const { recettes, toggleFavorite, getFavoriteCount } = useRecettes();
-  const [starsCounts, setStarsCounts] = useState({});
-
-  // Récupération des compteurs d'étoiles
-  useEffect(() => {
-    const fetchStars = async () => {
-      const counts = {};
-      for (const recipe of recettes) {
-        counts[recipe.id] = await getFavoriteCount(recipe.id);
-      }
-      setStarsCounts(counts);
-    };
-
-    if (recettes.length > 0) fetchStars();
-  }, [recettes]);
+  const { recettes, toggleFavorite } = useRecettes();
 
   return (
     <main className="container">
@@ -41,6 +27,7 @@ export default function Home() {
                   e.preventDefault();
                   toggleFavorite(recette.id);
                 }}
+                disabled={recette?.isUpdating}
                 aria-label={
                   recette.isFavorite
                     ? "Retirer des favoris"
@@ -63,9 +50,6 @@ export default function Home() {
                 <h3 className="recipe-title">{recette.name}</h3>
                 <p className="recipe-description">{recette.description}</p>
                 <div className="recipe-meta">
-                  <div className="meta-item">
-                    <span>⭐ {starsCounts[recette.id] || 0}</span>
-                  </div>
                   <div className="meta-item">
                     <span>⏱ Prep {recette.prep_time} min</span>
                   </div>

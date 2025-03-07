@@ -28,7 +28,6 @@ export default function Header() {
               onClick={() => setShowLogout(!showLogout)}
             >
               <span className="username">{user?.username}</span>
-
               {showLogout && (
                 <div className="logout-dropdown">
                   <button onClick={logout} className="logout-button">

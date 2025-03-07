@@ -33,84 +33,80 @@ export function RecettesProvider({ children, initialRecettes }) {
       const currentRecipe = recettes.find((r) => r.id === recipeId);
       const isCurrentlyFavorite = currentRecipe?.isFavorite;
 
+      let config;
+      // Vérification côté client avant l'appel API
+      if (isCurrentlyFavorite) {
+        return; // Déjà en favoris, ne rien faire
+      }
+
       try {
-        // Mise à jour optimiste
+        // Lock UI pendant la requête
         setRecettes((prev) =>
           prev.map((recipe) =>
-            recipe.id === recipeId
-              ? { ...recipe, isFavorite: !recipe.isFavorite }
-              : recipe
+            recipe.id === recipeId ? { ...recipe, isUpdating: true } : recipe
           )
         );
 
-        // Appel API réel
-        if (isCurrentlyFavorite) {
-          // Supprimer des favoris
-          await axios.delete(`${API_URL}/users/${user.username}/favorites`, {
-            headers: { Authorization: `Bearer ${user.token}` },
-            data: { recipe_id: recipeId }, // Spécifique à axios pour DELETE
-          });
-        } else {
-          // Ajouter aux favoris
-          await axios.post(
-            `${API_URL}/users/${user.username}/favorites`,
-            { recipe_id: recipeId },
-            {
-              headers: {
-                Authorization: `Bearer ${user.token}`,
-                "Content-Type": "application/json",
-              },
-            }
-          );
-        }
+        config = {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+            Accept: "application/json",
+          },
+          params: { recipeID: recipeId },
+        };
 
-        // Rafraîchir les données
-        const { data } = await axios.get(
+        // Vérification finale côté serveur avant l'ajout
+        const { data: existingFavorites } = await axios.get(
           `${API_URL}/users/${user.username}/favorites`,
-          {
-            headers: { Authorization: `Bearer ${user.token}` },
-          }
+          config
         );
 
+        if (existingFavorites.some((fav) => fav.recipe_id === recipeId)) {
+          throw new Error("Déjà en favoris");
+        }
+
+        await axios.post(
+          `${API_URL}/users/${user.username}/favorites`,
+          {},
+          config
+        );
+
+        // Mise à jour finale
         setRecettes((prev) =>
-          prev.map((recipe) => ({
-            ...recipe,
-            isFavorite: data.some((fav) => fav.id === recipe.id),
-          }))
+          prev.map((recipe) =>
+            recipe.id === recipeId
+              ? { ...recipe, isFavorite: true, isUpdating: false }
+              : recipe
+          )
         );
       } catch (error) {
         console.error("Erreur API:", error.response?.data);
-        // Annuler la mise à jour optimiste
-        setRecettes((prev) =>
-          prev.map((recipe) =>
-            recipe.id === recipeId
-              ? { ...recipe, isFavorite: isCurrentlyFavorite }
-              : recipe
-          )
-        );
+        // Reset + resync avec le serveur
+        if (config) {
+          const { data: favorites } = await axios.get(
+            `${API_URL}/users/${user.username}/favorites`,
+            config
+          );
+
+          setRecettes((prev) =>
+            prev.map((recipe) => ({
+              ...recipe,
+              isFavorite: favorites.some((fav) => fav.recipe_id === recipe.id),
+              isUpdating: false,
+            }))
+          );
+        }
       }
     },
     [isAuthenticated, user, recettes, router]
   );
-
-  const getFavoriteCount = useCallback(async (recipeId) => {
-    try {
-      const { data } = await axios.get(
-        `${API_URL}/recipes/${recipeId}/stars/fake`
-      );
-      return data.count;
-    } catch (error) {
-      console.error("Erreur de récupération du compteur:", error);
-      return 0;
-    }
-  }, []);
 
   const value = useMemo(
     () => ({
       recettes,
       setRecettes,
       toggleFavorite,
-      getFavoriteCount,
+      //getFavoriteCount,
     }),
     [recettes, toggleFavorite]
   );
