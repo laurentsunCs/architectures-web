@@ -73,7 +73,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | omicron   |               |               |                |                   |
 | pi        | Elie Caratgé  | Ayman Ben Souira | git@github.com:dotdelete/gourmet.git |                   |
 | rho       |               |               |                |                   |
-| sigma     |Thibault Muller|Pierre-Louis Veyrenc|[tibo-mllr/TP-archi-web](https://github.com/tibo-mllr/TP-archi-web)|TBD                |
+| sigma     |Thibault Muller|Pierre-Louis Veyrenc|[tibo-mllr/TP-archi-web](https://github.com/tibo-mllr/TP-archi-web)|[tibo-mllr/sigma-cooking](https://hub.docker.com/r/tibomllr/sigma-cooking)|
 | tau       | Timothée Vargenau              |               | [Lien GitHub](https://github.com/timothee-vrg/architectures-web-recipe)               |                   |
 | upsilon   |Alex Melhem|               |[J'ai faim](https://github.com/41ks/archiweb-jaifaim)|[am0911/jaifaim](https://hub.docker.com/r/am0911/jaifaim)|
 | phi       |               |               |                |                   |
