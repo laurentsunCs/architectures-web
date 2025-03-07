@@ -67,7 +67,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | iota      |               |               |                |                   |
 | kappa     |               |               |                |                   |
 | lambda    |Antoine Castel |Arnaud PY      |[Lien GitHub](https://github.com/antoinecstl/Gourmitton)|[nonouille/lambda-archi-web](https://hub.docker.com/repository/docker/nonouille/lambda-archi-web/general)|
-| mu        |Clara Bou Hanna             |               |                |  https://hub.docker.com/repository/docker/clarabh/gourmet/general           |
+| mu        |Clara Bou Hanna             |Tom Bray|                |  https://hub.docker.com/repository/docker/clarabh/gourmet/general           |
 | nu        |Elias Salvan   |Antoine Pélerin|https://github.com/elsgit43/architectures-web|                   |
 | xi        |               |               |                |                   |
 | omicron   |               |               |                |                   |
@@ -79,4 +79,4 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | phi       |               |               |                |                   |
 | chi       | Alexandre Correia   |  Gustave Legrand     | https://github.com/AlexandreCGithub/archiweb-TD               |  https://hub.docker.com/r/magnoir/archiweb-td                 |
 | psi       | Lisa Lupi|Thomas Soupizet|[github](https://github.com/lisa-lupi-cs/archiweb)|                   |
-| omega     | Thomas Melwig |Valentin Gérard|https://github.com/tmelwig/CookingMadness|                   |
+| omega     | Thomas Melwig |Valentin Gérard|[CookingMadness](https://github.com/tmelwig/CookingMadness)|[DockerImage](https://hub.docker.com/repository/docker/ankydios/cooking-madness/general)|
