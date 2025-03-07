@@ -57,6 +57,9 @@ services:
       - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
+    command:
+      - "--docker_only"
+      - "--housekeeping_interval=10s"
 
   prometheus:
     image: "prom/prometheus:latest"
@@ -128,11 +131,11 @@ services:
     container_name: "kappa"
 
   lambda:
-    image: "nginx:latest"
+    image: "nonouille/lambda-archi-web:v2"
     container_name: "lambda"
 
   mu:
-    image: "nginx:latest"
+    image: "clarabh/gourmet:latest"
     container_name: "mu"
 
   nu:
@@ -164,7 +167,7 @@ services:
     container_name: "tau"
 
   upsilon:
-    image: "nginx:latest"
+    image: "am0911/jaifaim:latest"
     container_name: "upsilon"
 
   phi:
@@ -172,7 +175,7 @@ services:
     container_name: "phi"
 
   chi:
-    image: "nginx:latest"
+    image: "magnoir/archiweb-td:latest"
     container_name: "chi"
 
   psi:
@@ -182,7 +185,3 @@ services:
   omega:
     image: "nginx:latest"
     container_name: "omega"
-
-  test:
-    image: "nginxdemos/hello:latest"
-    container_name: "test"

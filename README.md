@@ -56,18 +56,18 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 
 | Team Name | Team Member 1 | Team Member 2 | Git Repository | Docker Image Link |
 | --------- | ------------- | ------------- | -------------- | ----------------- |
-| alpha     |               |               |                |                   |
+| alpha     | Arthur Baudin | Clara Guillet |  https://github.com/dd-absol/archiweb-project |                   |
 | beta      |               |               |                |                   |
 | gamma     |               |               |                |                   |
 | delta     |               |               |                |                   |
 | epsilon   |  Liwei SUN    | Dac-An VO     | https://github.com/Dac-An-hub/cass-app               |                   |
-| zeta      |  Laurent Sun             |   Sharmilan             |     https://github.com/laurentsunCs/architectures-web           |             TBD      |
-| eta       |               |               |                |                   |
+| zeta      |  Laurent Sun             |   Sharmilan             |     https://github.com/laurentsunCs/architectures-web           |    llsun/recipe-app|
+| eta       |  Ayoub SGUIAR LHAMDANI |               |     https://github.com/ayoub-sguiar/architectures-web           |                   |
 | theta     |               |               |                |                   |
 | iota      |               |               |                |                   |
 | kappa     |               |               |                |                   |
 | lambda    |Antoine Castel |Arnaud PY      |[Lien GitHub](https://github.com/antoinecstl/Gourmitton)|[nonouille/lambda-archi-web](https://hub.docker.com/repository/docker/nonouille/lambda-archi-web/general)|
-| mu        |Clara Bou Hanna             |Tom Bray|                |                   |
+| mu        |Clara Bou Hanna             |Tom Bray|                |  https://hub.docker.com/repository/docker/clarabh/gourmet/general           |
 | nu        |Elias Salvan   |Antoine Pélerin|https://github.com/elsgit43/architectures-web|                   |
 | xi        |               |               |                |                   |
 | omicron   |               |               |                |                   |
@@ -75,8 +75,8 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | rho       |               |               |                |                   |
 | sigma     |Thibault Muller|Pierre-Louis Veyrenc|[tibo-mllr/TP-archi-web](https://github.com/tibo-mllr/TP-archi-web)|TBD                |
 | tau       | Timothée Vargenau              |               | [Lien GitHub](https://github.com/timothee-vrg/architectures-web-recipe)               |                   |
-| upsilon   |Alex Melhem|               |[J'ai faim](https://github.com/41ks/archiweb-jaifaim)|                   |
+| upsilon   |Alex Melhem|               |[J'ai faim](https://github.com/41ks/archiweb-jaifaim)|[am0911/jaifaim](https://hub.docker.com/r/am0911/jaifaim)|
 | phi       |               |               |                |                   |
-| chi       | Alexandre Correia   |  Gustave Legrand     | https://github.com/AlexandreCGithub/archiweb-TD               |                   |
-| psi       | Lisa Lupi|Thomas Soupizet|[github](https://github.com/lisalupi/architectures-web)|                   |
-| omega     | Thomas Melwig |Valentin Gérard|https://github.com/tmelwig/CookingMadness|[DockerImage](https://hub.docker.com/repository/docker/ankydios/cooking-madness/general)|
+| chi       | Alexandre Correia   |  Gustave Legrand     | https://github.com/AlexandreCGithub/archiweb-TD               |  https://hub.docker.com/r/magnoir/archiweb-td                 |
+| psi       | Lisa Lupi|Thomas Soupizet|[github](https://github.com/lisa-lupi-cs/archiweb)|                   |
+| omega     | Thomas Melwig |Valentin Gérard|[CookingMadness](https://github.com/tmelwig/CookingMadness)|[DockerImage](https://hub.docker.com/repository/docker/ankydios/cooking-madness/general)|
