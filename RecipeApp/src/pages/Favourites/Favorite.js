@@ -1,23 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Favorite.css";
+import { useAuth } from "../../Common/AuthProvider/AuthProvider";
 
 function Favorite() {  
 
+        const { authToken } = useAuth();
         const [error, setError] = useState(null);
         const [recipes, setRecipes] = useState([]);
         const [loading, setLoading] = useState(true);
+        const defaultImage = "https://images.pexels.com/photos/2611817/pexels-photo-2611817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+
+
 
         async function getFavorite() {
             setLoading(true);
             setError(null);
 
             const url = `https://gourmet.cours.quimerch.com/favorites`;
+
+            
             try {
                 const response = await fetch(url, {
                     method: "GET",
                     headers: {
                         "Accept": "application/json",
+                        "Authorization": `Bearer ${authToken}`, // Ajouter le token dans l'en-tête Authorization
                     },
                 });
 
@@ -44,9 +52,13 @@ function Favorite() {
             }
         }
 
-            useEffect(() => {
-                getFavorite();
-            });
+        useEffect(() => {
+            // Si le token est présent, on fait la requête API pour récupérer les favoris
+            if (authToken) {
+              getFavorite();
+            }
+          }, [authToken]); // Refait la requête à chaque changement de token
+        
     return (
         <div className="Favorite">
            < h1>Favoris</h1>
@@ -57,7 +69,7 @@ function Favorite() {
                                 {/* Vérification avant d'afficher l'image */}
                                 <a href={`/recipe/${recipe.id}`}>
                                     <img 
-                                        src={recipe?.image_url || "https://via.placeholder.com/150"} 
+                                        src={recipe?.image_url || defaultImage} 
                                         alt={recipe?.name || "Recette"} 
                                         className="recipe-image" 
                                     />

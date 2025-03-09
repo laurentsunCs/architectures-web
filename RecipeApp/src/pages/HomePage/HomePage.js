@@ -10,39 +10,46 @@ function HomePage() {
     const [viewMode, setViewMode] = useState('carousel'); // Mode de vue (carousel, table, slide)
     const intervalRef = useRef(null); // Référence à l'intervalle du carrousel
     const timeToSlide = 3000; // Temps pour changer d'image
+    const defaultImage = "https://images.pexels.com/photos/2611817/pexels-photo-2611817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 
-    // Charger les recettes
-    useEffect(() => {
-        const fetchRecipes = async () => {
-            console.log("Chargement des recettes...");
-            await fetch("https://gourmet.cours.quimerch.com/recipes", {
+
+    async function fetchRecipes() {
+        const url  = "https://gourmet.cours.quimerch.com/recipes";
+        setLoading(true);
+        setError(null)
+        console.log("Chargement des recettes...");  
+
+        try {
+            console.log("Essai du chargement des recettes...");
+            const response = await fetch(url, {
                 method: "GET",
                 headers: {
                     "Accept": "application/json",
                 },
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erreur lors de la récupération des recettes");
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log("Received response json", data);
-                if (Array.isArray(data)) {
-                    setRecipes(data);
-                } else {
-                    throw new Error("Format de données inattendu");
-                }
-                setLoading(false);
-            })
-            .catch(error => {
-                setError(error.message);
-                setLoading(false);
             });
-        };
 
-        fetchRecipes();
+            if (!response.ok) {
+                throw new Error(`Erreur de récupération : ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log("Received response json", data);
+            if (Array.isArray(data)) {
+                setRecipes(data);  
+            } else {
+                throw new Error("Format de données inattendu");
+            }
+            setLoading(false);
+        } catch (error) {
+            console.error("Erreur API :", error.message);
+            setError(error.message);
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    useEffect(() => {
+        fetchRecipes(); // Appel de la fonction pour récupérer les recettes
     }, []);
 
     // Slide automatique
@@ -98,7 +105,7 @@ function HomePage() {
                         <a href={`/recipe/${recipes[carouselIndex]?.id}`}>
                         {/* Vérification avant d'afficher l'image */}
                         <img 
-                            src={recipes[carouselIndex]?.image_url || "https://via.placeholder.com/150"} 
+                            src={recipes[carouselIndex]?.image_url || defaultImage} 
                             alt={recipes[carouselIndex]?.name || "Recette"} 
                             className="recipe-image" 
                         />
@@ -118,7 +125,7 @@ function HomePage() {
                                 {/* Vérification avant d'afficher l'image */}
                                 <a href={`/recipe/${recipe.id}`}>
                                     <img 
-                                        src={recipe?.image_url || "https://via.placeholder.com/150"} 
+                                        src={recipe?.image_url || defaultImage} 
                                         alt={recipe?.name || "Recette"} 
                                         className="recipe-image" 
                                     />
@@ -138,16 +145,19 @@ function HomePage() {
                 <div className="slide-view">
                     <div className="slide-container" style={{ transform: `translateX(-${slideIndex * 25}%)` }}>
                         {recipes.map((recipe, index) => (
+                            
+                            
                             <div 
                                 key={recipe.id} 
                                 className={`slide-item ${index === slideIndex ? 'active' : 
                                             (index === slideIndex + 1 ? 'next' : 
-                                            (index === slideIndex - 1 ? 'previous' : ''))}`}
+                                            (index === slideIndex - 1 ? 'previous' : ''))}`} 
                             >
                                 {/* Vérification avant d'afficher l'image */}
+                                <div className='recipe-card-slide'>
                                 <a href={`/recipe/${recipe.id}`}>
                                 <img 
-                                    src={recipe?.image_url || "https://via.placeholder.com/150"} 
+                                    src={recipe?.image_url || defaultImage} 
                                     alt={recipe?.name || "Recette"} 
                                     className="recipe-image" 
                                 />
@@ -155,6 +165,7 @@ function HomePage() {
                                     <h3>{recipe?.name || "Recette"}</h3>
                                 </div>
                                 </a>
+                            </div>
                             </div>
                         ))}
                     </div>

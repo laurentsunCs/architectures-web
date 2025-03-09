@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #02ac18;
+    background-color: #0078D4;
     padding: 10px 20px;
     position: relative;
 }
@@ -38,7 +38,7 @@
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #ff0007;
+        background-color: #0078D4;
         position: absolute;
         top: 50px;
         left: 0;
