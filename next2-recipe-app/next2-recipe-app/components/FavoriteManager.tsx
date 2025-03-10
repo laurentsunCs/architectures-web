@@ -1,3 +1,4 @@
+// File: components/FavoriteManager.tsx
 'use client';
 
 import { useState } from 'react';

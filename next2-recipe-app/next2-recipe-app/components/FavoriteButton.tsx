@@ -1,3 +1,4 @@
+// components/FavoriteButton.tsx
 'use client';
 
 import { useState } from 'react';

@@ -1,3 +1,4 @@
+// app/page.tsx
 import Link from 'next/link';
 import { Recipe } from '../types/types';
 import { FavoriteManager } from '../components/FavoriteManager';

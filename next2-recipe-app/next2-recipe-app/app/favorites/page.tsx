@@ -1,3 +1,4 @@
+// File: app/favorites/page.tsx
 'use client';
 
 import { useState } from 'react';

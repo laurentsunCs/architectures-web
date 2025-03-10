@@ -1,3 +1,4 @@
+// lib/api.ts
 import { Recipe, LoginResponse, SimpleRecipe } from '../types/types';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;

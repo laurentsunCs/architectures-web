@@ -1,3 +1,4 @@
+// File: app/recettes/[id]/page.tsx
 'use client';
 
 import { useState } from 'react';
