@@ -5,6 +5,7 @@ import RootLayout from "./RootLayout";
 import ErrorPage from "../Common/Error/Error";
 import { useState } from "react-dom";
 import Favorite from "../pages/Favourites/Favorite";
+import Login from "../pages/Login/Login";
 
 
 let id_ = "" 
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
              },
 
         {path: "favorite/", element: <Favorite/>},
+        {path: "login/", element: <Login/>},
              // Route "/about"
       //{ path: "contact", element: <ContactPage /> }, // Route "/contact"
     ],

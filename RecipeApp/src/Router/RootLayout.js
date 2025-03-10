@@ -11,6 +11,7 @@ function RootLayout() {
     <div>
     {/*    <div className="Loading"> {loading && <Loader /> }</div>*/}
       <Loader />
+
       <Menu /> {/* Menu affiché sur toutes les pages */}
       <Outlet /> {/* Zone où les pages enfants seront chargées */}
     </div>

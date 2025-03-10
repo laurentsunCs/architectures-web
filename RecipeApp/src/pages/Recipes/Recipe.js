@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Recipe.css";
+import RelatedRecipes from "./relatedRecipes/RelatedRecipes";
+import LikeRecipeButton from "./LikeRecipe/LikeRecipe";
 
 function Recipe() {
     const { id } = useParams(); // Récupérer l'ID depuis l'URL
@@ -98,6 +100,12 @@ function Recipe() {
                     </div>
                 </div>
             )}
+            
+
+        {/* Composant LikeRecipe */}
+        <LikeRecipeButton recipe_id={id} />  
+        {/* Recettes similaires */} 
+        <RelatedRecipes recipeid={id}/>
         </div>
     );
 }

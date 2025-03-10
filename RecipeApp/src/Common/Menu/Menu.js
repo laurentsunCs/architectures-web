@@ -1,7 +1,10 @@
 import React, {  } from 'react';
 import './Menu.css';
+import Logout from '../../pages/Logout/Logout';
+import { useAuth } from '../AuthProvider/AuthProvider';
 
 function Menu(){
+    const { authToken } = useAuth();
     function toggleMenu() {
         var menuLinks = document.getElementById("menu-links");
         if (menuLinks.classList.contains("active")) {
@@ -23,7 +26,13 @@ function Menu(){
             <a href="/">Accueil</a>
             <a href="/recipe">Recipes</a>
             <a href="/favorite">Favoris</a>
-            <a href="">Contact</a>
+            {authToken ? (
+                    <a href="/login">My Account</a>
+                    ) 
+            : <a href="/login">Login</a>}
+            {authToken ? <Logout />
+            : null}
+            
         </div>
     </nav>
         </div>
