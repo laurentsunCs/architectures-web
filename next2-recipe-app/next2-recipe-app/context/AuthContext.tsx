@@ -2,21 +2,14 @@
 
 import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
-
-interface AuthContextType {
-  token: string | null;
-  login: (username: string, password: string) => Promise<void>;
-  logout: () => void;
-}
-
-interface LoginResponse {
-  token: string;
-}
+import { LoginResponse } from '../types/types';
+import { AuthContextType } from '../types/types';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [token, setToken] = useState<string | null>(null);
+  const [username, setUsername] = useState<string | null>(null);
 
   // Charger le token depuis le localStorage au démarrage
   useEffect(() => {
@@ -55,7 +48,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ token, login, logout }}>
+    <AuthContext.Provider value={{ token, username, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

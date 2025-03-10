@@ -1,63 +1,55 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 import { useAuth } from '../../../context/AuthContext';
-import { FavoriteButton } from '../../../components/FavoriteButton';
+import { FavoriteManager } from '../../../components/FavoriteManager';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-
-interface Recipe {
-  id: string;
-  name: string;
-  description: string;
-  image_url: string;
-  prep_time: number;
-  cook_time: number;
-  servings: number;
-  calories: number;
-  cost: number;
-  instructions: string;
-}
+import { SimpleRecipe } from '../../../types/types';
+import { getSimpleRecipeWithErrorHandling, getFavorites } from '../../../lib/api';
 
 export default function RecipeDetails() {
-  const [recipe, setRecipe] = useState<Recipe | null>(null);
+  const [recipe, setRecipe] = useState<SimpleRecipe | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
   const { token } = useAuth();
   const params = useParams();
   const router = useRouter();
   const id = params.id;
 
-  useEffect(() => {
-    const fetchRecipe = async () => {
-      if (!id) {
+  const fetchRecipe = async () => {
+    if (!id) {
+      setError(true);
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      const recipeData = await getSimpleRecipeWithErrorHandling(id as string);
+      
+      if (!recipeData) {
         setError(true);
-        setIsLoading(false);
         return;
       }
 
-      try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/recipes/${id}`);
-        const recipeData = response.data as Recipe;
-        
-        if (!recipeData) {
-          setError(true);
-          return;
-        }
+      setRecipe(recipeData);
+      setError(false);
 
-        setRecipe(recipeData);
-        setError(false);
-      } catch (error) {
-        console.error('Error fetching recipe:', error);
-        setError(true);
-      } finally {
-        setIsLoading(false);
+      // Vérifier si la recette est en favori
+      if (token) {
+        const favorites = await getFavorites(token);
+        setIsFavorite(favorites.some(recipe => recipe.id === id));
       }
-    };
+    } catch (error) {
+      console.error('Error fetching recipe:', error);
+      setError(true);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    fetchRecipe();
-  }, [id]);
+  fetchRecipe();
 
   if (isLoading) {
     return (
@@ -93,7 +85,10 @@ export default function RecipeDetails() {
           )}
           {token && (
             <div className="absolute top-4 right-4">
-              <FavoriteButton recipeId={recipe.id} />
+              <FavoriteManager 
+                recipeId={recipe.id} 
+                initialIsFavorite={isFavorite}
+              />
             </div>
           )}
         </div>

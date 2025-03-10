@@ -1,20 +1,10 @@
-import axios from 'axios';
 import Link from 'next/link';
 import { Recipe } from '../types/types';
-import { FavoriteButton } from '../components/FavoriteButton';
+import { FavoriteManager } from '../components/FavoriteManager';
+import { getRecipes } from '../lib/api';
 
 export default async function HomePage() {
-  const recipes = await fetchRecipes();
-
-  async function fetchRecipes(): Promise<Recipe[]> {
-    try {
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/recipes`);
-      return response.data as Recipe[];
-    } catch (error) {
-      console.error('Error fetching recipes:', error);
-      return [];
-    }
-  }
+  const recipes = await getRecipes();
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -31,7 +21,7 @@ export default async function HomePage() {
                     className="recipe-image"
                   />
                 )}
-                <FavoriteButton recipeId={recipe.id} />
+                <FavoriteManager recipeId={recipe.id} />
               </div>
               <div className="recipe-content">
                 <h2 className="recipe-title">{recipe.name}</h2>
