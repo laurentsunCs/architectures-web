@@ -146,3 +146,13 @@ grafana.cours.quimerch.com {
 	encode gzip zstd
 	reverse_proxy grafana:3000
 }
+
+portainer.cours.quimerch.com {
+	encode gzip zstd
+	reverse_proxy portainer:9443 {
+		transport http {
+			tls
+			tls_insecure_skip_verify
+		}
+	}
+}

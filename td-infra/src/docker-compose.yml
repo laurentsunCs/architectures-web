@@ -2,32 +2,6 @@ services:
   gateway:
     image: "caddy:latest"
     container_name: "gateway"
-    depends_on:
-      - api
-      - alpha
-      - beta
-      - gamma
-      - delta
-      - epsilon
-      - zeta
-      - eta
-      - theta
-      - iota
-      - kappa
-      - lambda
-      - mu
-      - nu
-      - xi
-      - omicron
-      - pi
-      - rho
-      - sigma
-      - tau
-      - upsilon
-      - phi
-      - chi
-      - psi
-      - omega
     ports:
       - "80:80"
       - "443:443"
@@ -41,10 +15,16 @@ services:
     platform: linux/amd64
     env_file:
       - .env
-    ports:
-      - "8083:8083"
     volumes:
       - ./api:/app/data
+
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce:latest
+    volumes:
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
 
   cadvisor:
     image: "gcr.io/cadvisor/cadvisor:latest"
@@ -73,93 +53,55 @@ services:
     image: "grafana/grafana:latest"
     container_name: "grafana"
     user: "1000"
-    ports:
-      - "3000:3000"
     volumes:
       - ./grafana:/var/lib/grafana
 
   astro:
     image: "ewenquim/gourmet-astro:latest"
     container_name: "astro"
-    ports:
-      - "4321:4321"
 
   nextjs:
     image: "ewenquim/gourmet-next:latest"
     container_name: "nextjs"
-    ports:
-      - "3003:3003"
 
   alpha:
     image: "nginx:latest"
     container_name: "alpha"
-
-  beta:
-    image: "nginx:latest"
-    container_name: "beta"
-
-  gamma:
-    image: "nginx:latest"
-    container_name: "gamma"
-
-  delta:
-    image: "nginx:latest"
-    container_name: "delta"
 
   epsilon:
     image: "nginx:latest"
     container_name: "epsilon"
 
   zeta:
-    image: "nginx:latest"
+    image: "llsun/recipe-app:latest"
     container_name: "zeta"
 
   eta:
     image: "nginx:latest"
     container_name: "eta"
 
-  theta:
-    image: "nginx:latest"
-    container_name: "theta"
-
-  iota:
-    image: "nginx:latest"
-    container_name: "iota"
-
   kappa:
     image: "nginx:latest"
     container_name: "kappa"
 
   lambda:
-    image: "nonouille/lambda-archi-web:v2"
+    image: "nonouille/lambda-archi-web:latest"
     container_name: "lambda"
 
   mu:
-    image: "clarabh/gourmet:latest"
+    image: "clarabh/gourmet-frontend:latest"
     container_name: "mu"
 
   nu:
     image: "nginx:latest"
     container_name: "nu"
 
-  xi:
-    image: "nginx:latest"
-    container_name: "xi"
-
-  omicron:
-    image: "nginx:latest"
-    container_name: "omicron"
-
   pi:
     image: "nginx:latest"
     container_name: "pi"
 
-  rho:
-    image: "nginx:latest"
-    container_name: "rho"
-
   sigma:
-    image: "nginx:latest"
+    image: "tibomllr/sigma-cooking:latest"
     container_name: "sigma"
 
   tau:
@@ -170,10 +112,6 @@ services:
     image: "am0911/jaifaim:latest"
     container_name: "upsilon"
 
-  phi:
-    image: "nginx:latest"
-    container_name: "phi"
-
   chi:
     image: "magnoir/archiweb-td:latest"
     container_name: "chi"
@@ -183,5 +121,8 @@ services:
     container_name: "psi"
 
   omega:
-    image: "nginx:latest"
+    image: "ankydios/cooking-madness:latest"
     container_name: "omega"
+
+volumes:
+  data:
