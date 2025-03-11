@@ -56,6 +56,19 @@ services:
     volumes:
       - ./grafana:/var/lib/grafana
 
+  watchtower:
+    image: "containrrr/watchtower:latest"
+    container_name: "watchtower"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30
+
+  perf:
+    image: "ewenquim/perf:latest"
+    container_name: "perf"
+    volumes:
+      - ./data/perf:/app/data
+
   astro:
     image: "ewenquim/gourmet-astro:latest"
     container_name: "astro"
@@ -65,8 +78,12 @@ services:
     container_name: "nextjs"
 
   alpha:
-    image: "nginx:latest"
+    image: "ddabsol/gourmet-astro:latest"
     container_name: "alpha"
+
+  gamma:
+    image: "chenow/gourmitton:latest"
+    container_name: "gamma"
 
   epsilon:
     image: "nginx:latest"
@@ -97,7 +114,7 @@ services:
     container_name: "nu"
 
   pi:
-    image: "nginx:latest"
+    image: "dotdelete/gourmet:latest"
     container_name: "pi"
 
   sigma:
