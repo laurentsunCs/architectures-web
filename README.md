@@ -78,5 +78,5 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | upsilon   |Alex Melhem|               |[J'ai faim](https://github.com/41ks/archiweb-jaifaim)|[am0911/jaifaim](https://hub.docker.com/r/am0911/jaifaim)|
 | phi       |               |               |                |                   |
 | chi       | Alexandre Correia   |  Gustave Legrand     | https://github.com/AlexandreCGithub/archiweb-TD               |  https://hub.docker.com/r/magnoir/archiweb-td                 |
-| psi       | Lisa Lupi|Thomas Soupizet|[github](https://github.com/lisa-lupi-cs/archiweb)|                   |
+| psi       | Lisa Lupi|Thomas Soupizet|[github](https://github.com/lisa-lupi-cs/archiweb)|[docker](https://hub.docker.com/r/thomas01111/duo_gourmand)|
 | omega     | Thomas Melwig |Valentin Gérard|[CookingMadness](https://github.com/tmelwig/CookingMadness)|[DockerImage](https://hub.docker.com/repository/docker/ankydios/cooking-madness/general)|
