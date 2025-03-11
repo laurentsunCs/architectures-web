@@ -68,7 +68,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | kappa     |  Pierre-Olivier Coudert             |               |  https://github.com/MRmdum/TD-ArchiWeb              |                   |
 | lambda    |Antoine Castel |Arnaud PY      |[Lien GitHub](https://github.com/antoinecstl/Gourmitton)|[nonouille/lambda-archi-web](https://hub.docker.com/repository/docker/nonouille/lambda-archi-web/general)|
 | mu        |Clara Bou Hanna             |Tom Bray|              |  https://hub.docker.com/repository/docker/clarabh/gourmet-frontend/general           |
-| nu        |Elias Salvan   |Antoine Pélerin|https://github.com/elsgit43/architectures-web|                   |
+| nu        |Elias Salvan   |Antoine Pélerin|https://github.com/elsgit43/architectures-web|https://hub.docker.com/r/elsal1/bon-app|
 | xi        |               |               |                |                   |
 | omicron   |               |               |                |                   |
 | pi        | Elie Caratgé  | Ayman Ben Souira | [git@github.com:dotdelete/gourmet.git](https://github.com/dotdelete/gourmet.git) | [dotdelete/gourmet:latest](https://hub.docker.com/repository/docker/dotdelete/gourmet/general)                  |
