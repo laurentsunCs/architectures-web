@@ -58,7 +58,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | --------- | ------------- | ------------- | -------------- | ----------------- |
 | alpha     | Arthur Baudin | Clara Guillet |  https://github.com/dd-absol/archiweb-project |[lien docker hub](https://hub.docker.com/r/ddabsol/gourmet-astro)|
 | beta      |               |               |                |                   |
-| gamma     |               |               |                |                   |
+| gamma     |Antoine Cheneau|               |         https://github.com/chenow/gourmitton         |    [chenow/gourmitton](https://hub.docker.com/r/chenow/gourmitton)               |
 | delta     |               |               |                |                   |
 | epsilon   |  Liwei SUN    | Dac-An VO     | https://github.com/Dac-An-hub/cass-app               |                   |
 | zeta      |  Laurent Sun             |   Sharmilan             |     https://github.com/laurentsunCs/architectures-web           |    llsun/recipe-app|
