@@ -1,5 +1,18 @@
 .App {
   text-align: center;
+  width: 100%;
+  margin: auto;
+  padding: 0%;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /*background-color: #f4f4f5; /* Fond clair inspiré de Microsoft */
+  background-image: url('/public/background.png');
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-size: cover;                 /* Make the image fill the screen */
+  background-position: center;           /* Center the image on the screen */
+  height: 100vh;                          /* Set the height to match the viewport */
+  margin: 0;
+  height: 100%; /* Ensure the body takes the full height */
 }
 
 .App-logo {

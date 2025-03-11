@@ -1,19 +1,25 @@
 import React from "react";
 import "./App.css";
-import Menu from './Menu/Menu';
-import Loader from './Loader/Loader';
-import HomePage from "./HomePage/HomePage";
+import { RouterProvider } from "react-router-dom";
+import router from "./Router/Router";
+import { LoadingProvider } from "./Common/Loader/LoadingContext";
+import { AuthProvider } from "./Common/AuthProvider/AuthProvider";
+import { UserProvider } from "./Common/UserContext/UserContext";
 
 function App() {
-  return (
-    
-    <div className="App">
+  
 
-      <Loader />
-      <Menu />
-      
-      <HomePage />
-    </div>
+  return (
+    <AuthProvider>
+      <UserProvider>
+    <LoadingProvider>
+      <div className="App">
+      <RouterProvider router={router}>
+      </RouterProvider>
+      </div>
+    </LoadingProvider>
+    </UserProvider>
+    </AuthProvider>
   );
 }
 
