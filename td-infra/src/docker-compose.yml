@@ -110,7 +110,7 @@ services:
     container_name: "mu"
 
   nu:
-    image: "nginx:latest"
+    image: "elsal1/bon-app:latest"
     container_name: "nu"
 
   pi:
@@ -134,7 +134,7 @@ services:
     container_name: "chi"
 
   psi:
-    image: "nginx:latest"
+    image: "thomas01111/duo_gourmand:latest"
     container_name: "psi"
 
   omega:
