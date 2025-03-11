@@ -71,7 +71,7 @@ Toute initiative est la bienvenue, tant que les fonctionnalités demandées sont
 | nu        |Elias Salvan   |Antoine Pélerin|https://github.com/elsgit43/architectures-web|                   |
 | xi        |               |               |                |                   |
 | omicron   |               |               |                |                   |
-| pi        | Elie Caratgé  | Ayman Ben Souira | git@github.com:dotdelete/gourmet.git |                   |
+| pi        | Elie Caratgé  | Ayman Ben Souira | [git@github.com:dotdelete/gourmet.git](https://github.com/dotdelete/gourmet.git) | [dotdelete/gourmet:latest](https://hub.docker.com/repository/docker/dotdelete/gourmet/general)                  |
 | rho       |               |               |                |                   |
 | sigma     |Thibault Muller|Pierre-Louis Veyrenc|[tibo-mllr/TP-archi-web](https://github.com/tibo-mllr/TP-archi-web)|[tibo-mllr/sigma-cooking](https://hub.docker.com/r/tibomllr/sigma-cooking)|
 | tau       | Timothée Vargenau              |               | [Lien GitHub](https://github.com/timothee-vrg/architectures-web-recipe)               |                   |
